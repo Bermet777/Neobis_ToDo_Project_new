@@ -1,0 +1,24 @@
+<!-- edit.html -->
+
+{% extends 'todoapp/layout.html' %}
+
+{% block content %}
+
+<div style="margin-top: 50px;" class="ui container">
+    <h1 class="ui center aligned header">Edit Task</h1>
+
+    <form class="ui form" action="{% url 'edit' todo_id=todo.id %}" method="post">
+        {% csrf_token %}
+        <div class="field">
+            <label>Task</label>
+            <input type="text" name="title" value="{{ todo.title }}">
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <input type="text" name="description" value="{{ todo.description }}">
+        </div>
+        <button class="ui teal basic button" type="submit">Save</button>  
+    </form>
+</div>
+
+{% endblock content %}

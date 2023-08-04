@@ -10,6 +10,7 @@
         <div class="field">
             <label>New task</label>
             <input type="text" name="title" placeholder="Enter task name"><br>
+            <input type="text" name="description" placeholder="Enter task description">
         </div>
         <button class="ui teal basic button" type="submit">Add</button>
     </form>
@@ -17,7 +18,7 @@
 {% for todo in todo_list %}
 <div class="ui segment">
     <p class="ui big header">№{{ todo.id }} {{ todo.title }}</p>
-
+    
     {% if todo.is_complete == False %}
     <span class="ui gray label">Not complete</span>
     <a class="ui primary basic button" href="{% url 'update' todo_id=todo.id %}">Close</a>
@@ -26,6 +27,10 @@
     <a class="ui blue button" href="{% url 'update' todo_id=todo.id %}">Open</a>
     {% endif %}
     <a class="ui negative basic button" href="{% url 'delete' todo_id=todo.id %}">Delete</a>
+
+    <a class="ui teal basic button" href="{% url 'edit' todo_id=todo.id %}">Edit</a> 
+    <a class="ui teal basic button" href="{% url 'view_task' todo_id=todo.id %}">View</a>
+  
 </div>
 {% endfor %}
 </div>

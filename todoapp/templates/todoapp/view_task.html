@@ -1,0 +1,12 @@
+<!-- view_task.html -->
+
+{% extends 'todoapp/layout.html' %}
+
+{% block content %}
+
+<div style="margin-top: 50px;" class="ui container">
+    <h1 class="ui center aligned header">{{ todo.title }}</h1>
+    <p>{{ todo.description }}</p>
+</div>
+
+{% endblock content %}
