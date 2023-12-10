@@ -5,7 +5,7 @@
 {% block content %}
 
 <div style="margin-top: 50px;" class="ui container">
-    <h1 class="ui center aligned header">Edit My Task</h1>
+    <h1 class="ui center aligned header">Edit Task</h1>
 
     <form class="ui form" action="{% url 'edit' todo_id=todo.id %}" method="post">
         {% csrf_token %}
