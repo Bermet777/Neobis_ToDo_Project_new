@@ -26,7 +26,7 @@
     <span class="ui green label">Complete</span>
     <a class="ui blue button" href="{% url 'update' todo_id=todo.id %}">Open</a>
     {% endif %}
-    <a class="ui negative basic button" href="{% url 'delete' todo_id=todo.id %}">Remove</a>
+    <a class="ui negative basic button" href="{% url 'delete' todo_id=todo.id %}">Delete</a>
 
     <a class="ui teal basic button" href="{% url 'edit' todo_id=todo.id %}">Edit</a> 
     <a class="ui teal basic button" href="{% url 'view_task' todo_id=todo.id %}">View</a>
